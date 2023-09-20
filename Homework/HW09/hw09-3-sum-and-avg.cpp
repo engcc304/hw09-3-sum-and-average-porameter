@@ -45,3 +45,41 @@
         Array2 = 7 -3 5 19 27 -16 13 -7
 
 */
+
+#include <stdio.h>
+
+int main() {
+    int Array1[100] ;  // สร้างอาเรย์ Array1 ที่มีขนาดสูงสุดเท่ากับ 100
+    int Array2[100] ;  // สร้างอาเรย์ Array2 ที่มีขนาดสูงสุดเท่ากับ 100
+    int input , i = 0 ;
+
+    // รับข้อมูลจากผู้ใช้และบันทึกลงใน Array1
+    do {
+        printf( "Input value to Array1 [%d]: \n" , i ) ;
+        scanf( "%d" , &input ) ;
+
+        if ( input != -1 ) {
+            Array1[i] = input ;
+            i++ ;
+        }
+    } while ( input != -1 ) ;
+
+    // คัดลอกข้อมูลจาก Array1 ไปยัง Array2
+    for ( int j = 0; j < i; j++ ) {
+        Array2[j] = Array1[j] ;
+    }
+
+    // แสดงข้อมูลใน Array1
+    printf( "Array1 = " ) ;
+    for ( int j = 0 ; j < i ; j++ ) {
+        printf( "%d " , Array1[j] ) ;
+    }
+
+    // แสดงข้อมูลใน Array2
+    printf( "\nArray2 = " ) ;
+    for ( int j = 0; j < i ; j++ ) {
+        printf( "%d " , Array2[j] ) ;
+    }
+
+    return 0 ;
+}
